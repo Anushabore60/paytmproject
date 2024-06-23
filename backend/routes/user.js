@@ -14,7 +14,7 @@ const signupSchema= zod.object({
     username:zod.string().min(4).max(10),
     password:zod.string().min(4),
 })
-router.post("/signup", async (req,res,next)=>{
+router.post("/signup", async (req,res)=>{
    
      const validation =  await signupSchema.safeParse(req.body)
     if(!validation.success){
@@ -25,7 +25,7 @@ router.post("/signup", async (req,res,next)=>{
     if (existinguser){
         return res.status(409).json({ message:'user alreay exist,choose another name '})
     }  
-    console.log("user created ")
+   
 const user = await User.create ({
 
 firstname:req.body.firstname,

@@ -1,1 +1,1 @@
- creating paytm project using basic MERNstack
+ creating basic  paytm project 
